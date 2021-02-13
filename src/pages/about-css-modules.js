@@ -23,7 +23,6 @@ export default function About() {
       <Navbar></Navbar>
       <Header headerText="About CSS Modules" />
       <p>CSS Modules are cool</p>
-      <button type="button" class="btn btn-danger">Danger</button>
 
       <User
         username="Maria Randall"

@@ -1,11 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 
+const activeStyles = {
+    background: 'purple',
+    color: 'white'
+}
+
 export default function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-none">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand">
           Navbar
         </a>
         <button
@@ -21,17 +26,17 @@ export default function Navbar() {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <Link to="/" class="nav-link">
+              <Link to="/" className="nav-link" activeStyle={activeStyles}>
                 Home
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/contact/" class="nav-link">
+              <Link to="/contact/" className="nav-link" activeStyle={activeStyles}>
                 Contact
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/about-css-modules/" class="nav-link">
+              <Link to="/about-css-modules/" className="nav-link" activeStyle={activeStyles}>
                 About CSS Modules
               </Link>
             </li>
