@@ -1,18 +1,28 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 const activeStyles = {
     background: 'purple',
     color: 'white'
 }
 
-export default function Navbar() {
+export default function Navbar({children}) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
+
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-none">
       <div class="container-fluid">
-        <a class="navbar-brand">
-          Navbar
-        </a>
+        <a class="navbar-brand">{data.site.siteMetadata.title}</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -43,6 +53,7 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
+      {children}
     </nav>
   )
 }
